@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saving from Chaos: Refactoring via TDD — Aerosystem</title>
+    <link rel="stylesheet" href="../style.css"> <!-- Относительный путь к стилям в корне сайта -->
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/" class="logo-link" style="text-decoration: none;"><span
+                        class="logo-text">AEROSYSTEM</span></a>
+            </div>
+            <nav class="main-nav">
+                <a href="/blog" class="nav-link" style="color: var(--text-primary);">Blog</a>
+                <a href="/#contacts" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main" style="padding: 40px 0;">
+        <article class="opened-post">
+            <div class="container" style="max-width: 700px;"> <!-- Ограничение ширины для удобства чтения текста -->
+
+                <a href="/blog" class="back-link"
+                    style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; display: inline-block; margin-bottom: 20px;">←
+                    Back to Blog</a>
+
+                <header class="post-header" style="margin-bottom: 30px;">
+                    <span class="post-date"
+                        style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Case
+                        Study // October 2026</span>
+                    <h1 style="font-size: 2.2rem; line-height: 1.3; margin: 10px 0 0 0;">Saving from Chaos: Refactoring
+                        via TDD</h1>
+                </header>
+
+                <div class="post-content" style="color: var(--text-primary); font-size: 1.05rem; line-height: 1.7;">
+                    <p style="margin-bottom: 20px; text-align: justify;">More than a year has passed since the
+                        development of What To Wear Today; many libraries have been updated, and unsettling reports have
+                        started coming into Android Vitals. Analytics from Google Analytics and reports from Firebase
+                        only confirmed the fears: some users encountered application crashes, and some users encountered
+                        problems when paying for a subscription.</p>
+
+                    <p style="margin-bottom: 20px; text-align: justify;">Obfuscated logs did not provide much
+                        information about what exactly the problem was; however, the use of mapping allowed us to find
+                        out that the problem was a conflict between Google Play Billing and one of our own libraries.
+                        Since downgrading Google Billing was unacceptable, there was only one way out — a modification
+                        in our library.</p>
+
+                    <p style="margin-bottom: 20px; text-align: justify;">After a detailed study of the internal
+                        structure of the library, let's call it AppBillingWrapper, it was decided to add extended logs
+                        in the next application update to confirm the error theory. Such logs would give a detailed
+                        understanding of the systemic nature of the error; it was necessary to understand this, since
+                        the problems arose only on Android versions 13 and higher.</p>
+
+                    <p style="margin-bottom: 20px; text-align: justify;">Refactoring the internal mechanisms of the
+                        library did not change its public interfaces, and this allowed us to implement a Feature Toggle
+                        system. Why did we need this? The answer is simple: we created an alternative implementation of
+                        the public interface of AppBillingWrapper, a complete copy of the current functionality. The
+                        introduced Feature Toggle, depending on its value, selected one implementation or the other.</p>
+
+                    <p style="margin-bottom: 20px; text-align: justify;">Well, the base for refactoring was ready, and
+                        with the next update, we released it into production. The value of the new toggle essentially
+                        changed nothing, since the two implementations were completely identical. In this way, we
+                        provided users with a mechanism for iterative, releaseless introduction of changes. Yes, it is
+                        difficult to call this releaselessness in the full sense of the word, but it was the first step
+                        on the path of introducing safe changes.</p>
+
+                    <p style="margin-bottom: 20px; text-align: justify;">The next step was the introduction of a system
+                        that would allow safely making changes to the code. In other words — so as not to break
+                        anything. Here we decided to apply the TDD approach, since we were working with an important
+                        payment module, and it would be a shame if something went wrong with subscriptions. It was
+                        necessary to fulfill at least the following conditions:</p>
+
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1.</b> Maintain the
+                        connected premium if it was previously purchased, that is, make an adequate DB migration system;
+                    </p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>2.</b> The number of
+                        failures is the same as now or lower;</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>3.</b> System
+                        performance could drop by no more than 10%;</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>4.</b> Complexity and
+                        maintainability (by the way, back then we did not yet have a clear idea of these metrics) should
+                        become better;</p>
+                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>5.</b> In 95% of cases,
+                        the Happy Path for purchasing a subscription should pass successfully. We understood that there
+                        is always some probability of discovering platform-dependent bugs, so we left 5% precisely for
+                        such cases.</p>
+
+                    <p style="margin-bottom: 20px; text-align: justify;">We started by dividing the copy of
+                        AppBillingWrapper into blocks. In total, we got 3 blocks where business logic, platform code
+                        (DB), and code for working with the billing library were concentrated. Next, we developed a set
+                        of Test Cases, which, according to our calculations, covered at least 85-88% of all cases of
+                        direct use and unexpected errors. In total, we got 260 test cases. The volume is impressive, but
+                        we had to go through this path!</p>
+
+                    <p style="margin-bottom: 20px; text-align: justify;">We did the implementation in blocks, meaning
+                        the entire process was to consist of 4 stages: 3 blocks and one release to remove the feature
+                        toggle. We acted as follows: we removed the code from the implementation sites one by one,
+                        leaving only high-level interfaces so as not to break the general logic of the entire feature,
+                        wrote falling tests, wrote the implementation, and ran the tests again. The marker is simple — a
+                        passed pipeline on the MR gave the right to merge into the feature-refactor branch. Only this
+                        way; we did not provide for deviations.</p>
+
+                    <p style="margin-bottom: 20px; text-align: justify;">We started with the platform module, did a
+                        complete refactoring, brought the changes into the nearest version of the application, and
+                        turned on the toggle rollout to 5%. It was scary! But the analytics were silent; everything
+                        indicated that the scheme worked and we could continue. We did the rest of the modules according
+                        to this principle and rolled out the toggle to 100% of users gradually, over the course of 2
+                        weeks.</p>
+
+                    <p style="margin-bottom: 20px; text-align: justify;">After 88% of users updated to the current
+                        version, we simply made a small release removing the introduced toggle and deleting the old
+                        implementation of AppBillingWrapper.</p>
+
+                    <p style="margin-bottom: 20px; text-align: justify;">In total, all the work took us 1 month. As a
+                        result, one bug was opened on AppBillingWrapper, the fix of which took us 1 hour of time, since
+                        the entire system as a whole became more predictable, transparent, and maintainable.</p>
+
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer" style="margin-top: 60px;">
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>Inquiries: <a href="mailto:alex@aerosystem.tech">alex@aerosystem.tech</a></p>
+            </div>
+            <div class="footer-social">
+                <a href="https://threads.net" target="_blank" rel="noopener">Threads</a>
+                <a href="https://reddit.com" target="_blank" rel="noopener">Reddit</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
