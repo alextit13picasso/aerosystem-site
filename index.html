@@ -1,55 +1,63 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aerosystem — Технологическое бюро</title>
+    <title>Aerosystem — Mobile Engineering Bureau</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <header class="site-header">
         <div class="header-container">
             <div class="logo">
-                <!-- Замени на свой тег img, если есть готовый файл логотипа, например: <img src="logo.png" alt="Aerosystem"> -->
                 <span class="logo-text">AEROSYSTEM</span>
             </div>
             <nav class="main-nav">
-                <a href="/blog" class="nav-link">Блог</a>
-                <a href="#contacts" class="nav-link">Контакты</a>
+                <a href="/blog" class="nav-link">Blog</a>
+                <a href="#contacts" class="nav-link">Contact</a>
             </nav>
         </div>
     </header>
 
     <main class="site-main">
+        <!-- Секция с фоновым баннером -->
         <section class="hero-block">
             <div class="container">
-                <h1>Технологическое бюро инженерных решений</h1>
-                <p>Мы специализируемся на аудите, стабилизации и восстановлении критической архитектуры мобильных и кроссплатформенных систем. Исправляем глубокие структурные дефекты, когда стандартные методы разработки не привели к стабильной работе продукта.</p>
+                <h1>Mobile Systems Engineering Bureau</h1>
+                <p>We specialize in the technical recovery, audit, and stabilization of troubled Android and
+                    cross-platform mobile systems. Our bureau resolves severe architectural defects and restores code
+                    fault-tolerance when standard development methods fail to deliver production stability.</p>
             </div>
         </section>
 
         <section class="experience-block">
             <div class="container">
-                <h2>Экспертиза и деятельность</h2>
-                <p>Проектируем и внедряем отказоустойчивые решения на стыке мобильных технологий и строгих инженерных стандартов надежности. Опираясь на 10-летний опыт работы в высоконагруженном финтехе и системной инженерии, наше бюро ликвидирует технический долг, выстраивает предсказуемые CI/CD процессы и оптимизирует производительность приложений до уровня системных требований. Мы берем на себя ответственность за проекты на любой стадии деградации кода.</p>
+                <h2>Expertise & Scope</h2>
+                <p>We design and implement highly resilient mobile software solutions aligned with strict system
+                    reliability standards. Leveraging over a decade of hands-on expertise in high-load fintech
+                    architecture and infrastructure optimization, we systematically eliminate technical debt, establish
+                    predictable CI/CD pipelines, and restore crash-free performance metrics. We take full ownership of
+                    complex engineering tasks at any stage of project degradation.</p>
             </div>
         </section>
 
         <section id="contacts" class="feedback-block">
             <div class="container">
-                <h2>Обратная связь</h2>
+                <h2>Technical Request</h2>
                 <form class="contact-form" action="https://formspree.io" method="POST">
-                    <!-- Замени URL в action на свой идентификатор обработчика форм (например, Formspree), либо настроим позже через скрипт -->
                     <div class="form-group">
-                        <label for="email">Электронная почта</label>
+                        <label for="email">Corporate Email</label>
                         <input type="email" id="email" name="email" required placeholder="name@company.com">
                     </div>
                     <div class="form-group">
-                        <label for="message">Описание технической задачи</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="Краткое описание текущего состояния системы и критических проблем..."></textarea>
+                        <label for="message">System Status & Objectives</label>
+                        <textarea id="message" name="message" rows="5" required
+                            placeholder="Briefly outline your current architecture limitations and critical system issues..."></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">Отправить запрос</button>
+                    <button type="submit" class="submit-btn">Submit Request</button>
                 </form>
             </div>
         </section>
@@ -58,7 +66,7 @@
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-info">
-                <p>Электронная почта: <a href="mailto:alex@aerosystem.tech">alex@aerosystem.tech</a></p>
+                <p>Inquiries: <a href="mailto:alex@aerosystem.tech">alex@aerosystem.tech</a></p>
             </div>
             <div class="footer-social">
                 <a href="https://threads.net" target="_blank" rel="noopener">Threads</a>
@@ -68,4 +76,5 @@
     </footer>
 
 </body>
+
 </html>

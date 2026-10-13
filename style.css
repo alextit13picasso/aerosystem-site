@@ -44,7 +44,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 15px 20px;
+}
+
+/* Логотип */
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo-text {
@@ -52,6 +58,7 @@ body {
     letter-spacing: 2px;
     font-size: 1.1rem;
     color: var(--text-primary);
+    text-transform: uppercase;
 }
 
 .main-nav {
@@ -72,15 +79,27 @@ body {
 
 /* Главные контентные блоки */
 .site-main {
-    padding: 60px 0;
+    padding: 0;
+    /* Убираем паддинг, так как баннер займет всю ширину */
+}
+
+/* Настройка фонового баннера */
+.hero-block {
+    background-image: linear-gradient(to bottom, rgba(18, 18, 20, 0.85), rgba(18, 18, 20, 0.95)), url('banner.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+    /* Больше пространства для эффекта глубины */
+    border-bottom: 1px solid var(--border-color);
 }
 
 section {
-    padding: 40px 0;
+    padding: 60px 0;
 }
 
 h1 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     font-weight: 600;
     margin-bottom: 20px;
     letter-spacing: -0.5px;
@@ -161,7 +180,7 @@ p {
 /* Подвал */
 .site-footer {
     border-top: 1px solid var(--border-color);
-    padding: 30px 20px;
+    padding: 40px 20px;
     font-size: 0.9rem;
     color: var(--text-secondary);
 }
@@ -196,17 +215,24 @@ p {
     color: var(--text-primary);
 }
 
-/* Адаптивность под мобильные девайсы */
 @media (max-width: 600px) {
-    .header-container, .footer-container {
+
+    .header-container,
+    .footer-container {
         flex-direction: column;
         text-align: center;
         gap: 16px;
     }
+
     h1 {
         font-size: 1.8rem;
     }
+
     .contact-form {
         padding: 20px;
+    }
+
+    .hero-block {
+        padding: 60px 0;
     }
 }
