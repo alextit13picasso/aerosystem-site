@@ -1,0 +1,212 @@
+:root {
+    --bg-color: #121214;
+    --surface-color: #1a1a1e;
+    --text-primary: #e1e1e6;
+    --text-secondary: #a8a8b3;
+    --border-color: #29292e;
+    --accent-color: #48484f;
+    --accent-hover: #57575e;
+    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-stack);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Шапка */
+.site-header {
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo-text {
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.main-nav {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+}
+
+/* Главные контентные блоки */
+.site-main {
+    padding: 60px 0;
+}
+
+section {
+    padding: 40px 0;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    margin-bottom: 16px;
+    text-align: justify;
+}
+
+/* Форма обратной связи */
+.contact-form {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 12px;
+    font-family: var(--font-stack);
+    font-size: 1rem;
+    border-radius: 2px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #444449;
+}
+
+.submit-btn {
+    background-color: var(--accent-color);
+    color: var(--text-primary);
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Подвал */
+.site-footer {
+    border-top: 1px solid var(--border-color);
+    padding: 30px 20px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.footer-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer-info a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-social a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-social a:hover {
+    color: var(--text-primary);
+}
+
+/* Адаптивность под мобильные девайсы */
+@media (max-width: 600px) {
+    .header-container, .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    .contact-form {
+        padding: 20px;
+    }
+}
