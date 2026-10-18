@@ -44,87 +44,199 @@
                     <span class="post-date"
                         style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Case
                         Study // October 2026</span>
-                    <h1 style="font-size: 2.2rem; line-height: 1.3; margin: 10px 0 0 0;">Reviving Android Cooling System Monitor via IEEE 12207</h1>
+                    <h1 style="font-size: 2.2rem; line-height: 1.3; margin: 10px 0 0 0;">Reviving Android Cooling System
+                        Monitor via IEEE 12207</h1>
                 </header>
 
                 <div class="post-content" style="color: var(--text-primary); font-size: 1.05rem; line-height: 1.7;">
-                    <p style="margin-bottom: 20px; text-align: justify;">In September 2025, the technological bureau aerosystem.tech accepted a legacy Android tablet application for a comprehensive technical and stability audit. The software's targeted operational purpose is the automated aggregation, validation, and logging of real-time monitoring telematics from industrial cooling complexes operating at extreme capacities.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">In September 2025, the technological bureau
+                        aerosystem.tech accepted a legacy Android tablet application for a comprehensive technical and
+                        stability audit. The software's targeted operational purpose is the automated aggregation,
+                        validation, and logging of real-time monitoring telematics from industrial cooling complexes
+                        operating at extreme capacities.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">The project had been evolving since 2018. Over its 7-year continuous development lifecycle, the codebase passed through 4 different external vendors, gradually mutating into a highly coupled, chaotic monolith. The core technical showstoppers identified at the start of our anti-crisis engineering track included:</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">The project had been evolving since 2018. Over
+                        its 7-year continuous development lifecycle, the codebase passed through 4 different external
+                        vendors, gradually mutating into a highly coupled, chaotic monolith. The core technical
+                        showstoppers identified at the start of our anti-crisis engineering track included:</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;"><b>Architectural Degradation:</b> A rigid, uncontrolled mix of Java (accounting for 25% of the codebase) and Kotlin without any defined layer boundaries. The software contained multiple obsolete, partially integrated architectural design patterns left by previous vendors.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;"><b>Architectural Degradation:</b> A rigid,
+                        uncontrolled mix of Java (accounting for 25% of the codebase) and Kotlin without any defined
+                        layer boundaries. The software contained multiple obsolete, partially integrated architectural
+                        design patterns left by previous vendors.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;"><b>Dependency Bloat:</b> The system integrated over 60 third-party open-source libraries. Severe transitive dependency conflicts resulted in duplicate binaries, pushing the final production APK footprint to an unacceptable 450 MB.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;"><b>Dependency Bloat:</b> The system integrated
+                        over 60 third-party open-source libraries. Severe transitive dependency conflicts resulted in
+                        duplicate binaries, pushing the final production APK footprint to an unacceptable 450 MB.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;"><b>Generative Technical Debt:</b> For the last 6 months, code additions were pushed rapidly into production using unguided AI assistance. This approach caused an aggressive spike in coupling and heavily overinflated class definitions.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;"><b>Generative Technical Debt:</b> For the last
+                        6 months, code additions were pushed rapidly into production using unguided AI assistance. This
+                        approach caused an aggressive spike in coupling and heavily overinflated class definitions.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;"><b>Runtime Instability:</b> Complete breakdown of backward compatibility. The software consistently crashed upon launch in Android 15 and 16 target environments due to the presence of unmitigated Deprecated APIs.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;"><b>Runtime Instability:</b> Complete breakdown
+                        of backward compatibility. The software consistently crashed upon launch in Android 15 and 16
+                        target environments due to the presence of unmitigated Deprecated APIs.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;"><b>Low Fault Tolerance:</b> Automated test coverage had dropped below 5%. The resulting density of critical runtime crashes in production environments forced the client to maintain continuous engineering support squads to manually resolve application failures during night shifts.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;"><b>Low Fault Tolerance:</b> Automated test
+                        coverage had dropped below 5%. The resulting density of critical runtime crashes in production
+                        environments forced the client to maintain continuous engineering support squads to manually
+                        resolve application failures during night shifts.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;"><b>Business Constraints:</b> Deploy a fully stabilized, operational alpha build into live production environments within a strict 3-month hard deadline. To build a reliable workflow, we adopted the international standard <b>IEEE 12207</b>, which strictly defines software and systems lifecycle processes.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;"><b>Business Constraints:</b> Deploy a fully
+                        stabilized, operational alpha build into live production environments within a strict 3-month
+                        hard deadline. To build a reliable workflow, we adopted the international standard <b>IEEE
+                            12207</b>, which strictly defines software and systems lifecycle processes.</p>
 
-                    <h2 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; font-weight: 700;">Phase 1. Requirements Engineering and Decomposition (IEEE 12207)</h2>
+                    <h2 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; font-weight: 700;">Phase 1.
+                        Requirements Engineering and Decomposition (IEEE 12207)</h2>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">Technical documentation inside Confluence had not been updated since February 2022. Automated testing and defect reporting pipelines (GitLab CI -> Allure) were entirely broken and defunct. Working in close alignment with the client's operational engineering stakeholders, we engineered a rigorous system requirement specification containing over 200 measurable technical and performance metrics. This specification was immediately mapped into a strict matrix of Use Cases and validation Test Cases.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">Technical documentation inside Confluence had
+                        not been updated since February 2022. Automated testing and defect reporting pipelines (GitLab
+                        CI -> Allure) were entirely broken and defunct. Working in close alignment with the client's
+                        operational engineering stakeholders, we engineered a rigorous system requirement specification
+                        containing over 200 measurable technical and performance metrics. This specification was
+                        immediately mapped into a strict matrix of Use Cases and validation Test Cases.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">The core quantified baseline metrics targeted:</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">The core quantified baseline metrics targeted:
+                    </p>
 
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1.</b> Hard daily limits on system-level runtime failures (ANRs and application crashes);</p>
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>2.</b> Maximum allowable failure rates within the telemetry ingestion and transaction flow of compressor stations;</p>
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>3.</b> Hard session retention times in the tablet device's hardware memory;</p>
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>4.</b> Predictable UI component state integrity during dynamic runtime configuration updates (such as real-time localization shifts, tablet orientation toggles, and Split-Screen multitasking);</p>
-                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>5.</b> Strict local data-caching architecture and data-interchange boundaries to guarantee offline-first continuity followed by safe, atomic batch synchronization.</p>
-                    <h2 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; font-weight: 700;">Phase 2. High-Level Design (HLD)</h2>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1.</b> Hard daily limits
+                        on system-level runtime failures (ANRs and application crashes);</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>2.</b> Maximum allowable
+                        failure rates within the telemetry ingestion and transaction flow of compressor stations;</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>3.</b> Hard session
+                        retention times in the tablet device's hardware memory;</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>4.</b> Predictable UI
+                        component state integrity during dynamic runtime configuration updates (such as real-time
+                        localization shifts, tablet orientation toggles, and Split-Screen multitasking);</p>
+                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>5.</b> Strict local
+                        data-caching architecture and data-interchange boundaries to guarantee offline-first continuity
+                        followed by safe, atomic batch synchronization.</p>
+                    <h2 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; font-weight: 700;">Phase 2.
+                        High-Level Design (HLD)</h2>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">The monolithic application structure was split into isolated, decoupled functional modules. The core business logic previously handled by bulky external open-source dependencies was reverse-engineered and re-implemented natively inside the product boundaries. This move eliminated transitive dependency overhead and drastically cleaned up the classpath.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">The monolithic application structure was split
+                        into isolated, decoupled functional modules. The core business logic previously handled by bulky
+                        external open-source dependencies was reverse-engineered and re-implemented natively inside the
+                        product boundaries. This move eliminated transitive dependency overhead and drastically cleaned
+                        up the classpath.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">Because the decomposition of the monolith was executed iteratively, maintaining build stability and interface integrity across merge requests was critical. To mitigate regression risks, we deployed a three-layer automated defense circuit directly inside GitLab CI:</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">Because the decomposition of the monolith was
+                        executed iteratively, maintaining build stability and interface integrity across merge requests
+                        was critical. To mitigate regression risks, we deployed a three-layer automated defense circuit
+                        directly inside GitLab CI:</p>
 
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1.</b> Strict static analysis gates via customized Lint rules;</p>
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>2.</b> Mandatory execution of Unit and UI testing pipelines on every automated build;</p>
-                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>3.</b> Complete isolation of new architecture blocks behind Feature Toggles, paired with remote automated crash capturing.</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1.</b> Strict static
+                        analysis gates via customized Lint rules;</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>2.</b> Mandatory
+                        execution of Unit and UI testing pipelines on every automated build;</p>
+                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>3.</b> Complete
+                        isolation of new architecture blocks behind Feature Toggles, paired with remote automated crash
+                        capturing.</p>
 
-                    <h2 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; font-weight: 700;">Phase 3. Low-Level Design (LLD)</h2>
+                    <h2 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; font-weight: 700;">Phase 3.
+                        Low-Level Design (LLD)</h2>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">During the Low-Level Design phase, we defined explicit method signatures, internal data structures, and deterministic inter-module communication contracts. Backed by solid HLD blueprints, the team ran the generation of RFC (Request for Comments) and SRS (Software Requirement Specification) documentation in parallel with writing Unit test cases for specific code interfaces.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">During the Low-Level Design phase, we defined
+                        explicit method signatures, internal data structures, and deterministic inter-module
+                        communication contracts. Backed by solid HLD blueprints, the team ran the generation of RFC
+                        (Request for Comments) and SRS (Software Requirement Specification) documentation in parallel
+                        with writing Unit test cases for specific code interfaces.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">Within the first 3 weeks of the track, we locked down the foundational LLD documentation along with a comprehensive modular testing matrix. This covered approximately 8–10% of the entire targeted system architecture before a single line of production code was written.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">Within the first 3 weeks of the track, we
+                        locked down the foundational LLD documentation along with a comprehensive modular testing
+                        matrix. This covered approximately 8–10% of the entire targeted system architecture before a
+                        single line of production code was written.</p>
 
-                    <h2 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; font-weight: 700;">Phase 4. Test-Driven Development (TDD)</h2>
+                    <h2 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; font-weight: 700;">Phase 4.
+                        Test-Driven Development (TDD)</h2>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">All core engineering was executed strictly via TDD (Test-Driven Development) workflows using the "Red-Green-Refactor" cycle. Feature code was delivered via vertical architectural slices: starting deep within the data layer (Data Source) of a given module up through the business logic to the view layer (UI layer).</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">All core engineering was executed strictly via
+                        TDD (Test-Driven Development) workflows using the "Red-Green-Refactor" cycle. Feature code was
+                        delivered via vertical architectural slices: starting deep within the data layer (Data Source)
+                        of a given module up through the business logic to the view layer (UI layer).</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">This approach eliminated the cognitive load of holding the entire legacy system's context in the engineers' heads. It guaranteed that code could only be merged into the primary repository if it completely satisfied the deterministic criteria of the pre-written automated tests.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">This approach eliminated the cognitive load of
+                        holding the entire legacy system's context in the engineers' heads. It guaranteed that code
+                        could only be merged into the primary repository if it completely satisfied the deterministic
+                        criteria of the pre-written automated tests.</p>
 
-                    <h2 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; font-weight: 700;">Phase 5. Field Stabilization and Acceptance Testing</h2>
+                    <h2 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; font-weight: 700;">Phase 5.
+                        Field Stabilization and Acceptance Testing</h2>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">The implementation of a robust Feature Toggle mechanism enabled the safe delivery of progressive test builds straight onto the operational tablets used by active cooling complex field engineers. This process was executed without interrupting the core monitoring workflows. Whenever runtime requirements shifted, the changes were first validated inside the LLD documentation, backed by newly compiled automated tests, and only then pushed into production coding tracks.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">The implementation of a robust Feature Toggle
+                        mechanism enabled the safe delivery of progressive test builds straight onto the operational
+                        tablets used by active cooling complex field engineers. This process was executed without
+                        interrupting the core monitoring workflows. Whenever runtime requirements shifted, the changes
+                        were first validated inside the LLD documentation, backed by newly compiled automated tests, and
+                        only then pushed into production coding tracks.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">During automated runs on highly customized, vendor-specific Android tablet firmware, several platform-dependent defects were identified:</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">During automated runs on highly customized,
+                        vendor-specific Android tablet firmware, several platform-dependent defects were identified:</p>
 
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1.</b> Rendering pipeline breaks within data-dense tables under Split-Screen operations;</p>
-                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>2.</b> Abrupt Activity lifecycle termination triggered by aggressive, undocumented battery-saver algorithms built into the vendor's hardware tablets.</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1.</b> Rendering
+                        pipeline breaks within data-dense tables under Split-Screen operations;</p>
+                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>2.</b> Abrupt Activity
+                        lifecycle termination triggered by aggressive, undocumented battery-saver algorithms built into
+                        the vendor's hardware tablets.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">Thanks to the hard separation of architectural layers, these bugs were quickly isolated and mitigated entirely inside the isolated UI layer. The underlying business logic and Data layer remained completely untouched, eliminating any risk of widespread system regression.</p>
-                    <h2 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; font-weight: 700;">Technical Outcomes</h2>
+                    <p style="margin-bottom: 20px; text-align: justify;">Thanks to the hard separation of architectural
+                        layers, these bugs were quickly isolated and mitigated entirely inside the isolated UI layer.
+                        The underlying business logic and Data layer remained completely untouched, eliminating any risk
+                        of widespread system regression.</p>
+                    <h2 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; font-weight: 700;">Technical
+                        Outcomes</h2>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">Following a 3-month anti-crisis engineering track structured around the IEEE 12207 lifecycle framework, the application was successfully transitioned into stable production operations:</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">Following a 3-month anti-crisis engineering
+                        track structured around the IEEE 12207 lifecycle framework, the application was successfully
+                        transitioned into stable production operations:</p>
 
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1. Codebase Optimization:</b> The total production source-code footprint was reduced by 20% by completely purging duplicate components and unverified generative AI debt.</p>
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>2. Distribution Efficiency:</b> The production APK file size dropped from 450 MB down to 112 MB due to the strict removal of redundant third-party library bloat.</p>
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>3. Quality Assurance:</b> Automated test coverage across the newly integrated modular architecture stabilized at a strict 95% threshold.</p>
-                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>4. Runtime Reliability:</b> The system's Crash-Free session rate settled firmly at an industry-leading 99.98% benchmark.</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1. Codebase
+                            Optimization:</b> The total production source-code footprint was reduced by 20% by
+                        completely purging duplicate components and unverified generative AI debt.</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>2. Distribution
+                            Efficiency:</b> The production APK file size dropped from 450 MB down to 112 MB due to the
+                        strict removal of redundant third-party library bloat.</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>3. Quality
+                            Assurance:</b> Automated test coverage across the newly integrated modular architecture
+                        stabilized at a strict 95% threshold.</p>
+                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>4. Runtime
+                            Reliability:</b> The system's Crash-Free session rate settled firmly at an industry-leading
+                        99.98% benchmark.</p>
 
-                    <h2 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; font-weight: 700;">Business Efficiency and Financial Metrics</h2>
+                    <h2 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; font-weight: 700;">Business
+                        Efficiency and Financial Metrics</h2>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">Transitioning the software system to a fault-tolerant, modular architecture significantly improved key operational indicators and optimized the product's overall technical support budget:</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">Transitioning the software system to a
+                        fault-tolerant, modular architecture significantly improved key operational indicators and
+                        optimized the product's overall technical support budget:</p>
 
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1. Liquidation of Night Support Shifts:</b> Achieving the targeted structural stability completely eliminated the need for continuous, around-the-clock emergency support squads. The total cancellation of night shifts—which previously required double hourly billing rates (x2)—reduced direct ongoing operational support expenses by <b>40%</b>.</p>
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>2. Client Base Retention:</b> Stabilizing the core telematics transaction flow and eliminating offline data loss brought technical-fault-driven customer churn (Churn Rate) down to a strict <b>0%</b>.</p>
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>3. Contract Recovery:</b> Enterprise clients who had previously frozen their service contracts due to critical runtime defects completely restored their active paid subscriptions within two months following the initial alpha deployment.</p>
-                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>4. Infrastructure Cost Mitigation:</b> Cutting the production APK size by a factor of 4 led to a directly proportional drop in content delivery network (CDN) bandwidth costs and traffic distribution fees during mass fleet updates across the tablet pool.</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1. Liquidation of Night
+                            Support Shifts:</b> Achieving the targeted structural stability completely eliminated the
+                        need for continuous, around-the-clock emergency support squads. The total cancellation of night
+                        shifts—which previously required double hourly billing rates (x2)—reduced direct ongoing
+                        operational support expenses by <b>40%</b>.</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>2. Client Base
+                            Retention:</b> Stabilizing the core telematics transaction flow and eliminating offline data
+                        loss brought technical-fault-driven customer churn (Churn Rate) down to a strict <b>0%</b>.</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>3. Contract
+                            Recovery:</b> Enterprise clients who had previously frozen their service contracts due to
+                        critical runtime defects completely restored their active paid subscriptions within two months
+                        following the initial alpha deployment.</p>
+                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>4. Infrastructure Cost
+                            Mitigation:</b> Cutting the production APK size by a factor of 4 led to a directly
+                        proportional drop in content delivery network (CDN) bandwidth costs and traffic distribution
+                        fees during mass fleet updates across the tablet pool.</p>
                 </div>
+                <br>
+                <p
+                    style="margin-top: 20px; font-size: 0.95rem; font-style: italic; text-align: justify; color: var(--text-secondary);">
+                    If your application has security problems, the integration of new functionality starts to cost more
+                    and more, the stability and crash-free rate become lower and lower, and users complain — write to
+                    our email alex@aerosystem.tech. We will gladly help; moreover, an express audit of your application
+                    is completely free.
+                </p>
+
 
             </div>
         </article>
