@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aerosystem — Engineering Blog</title>
-    <link rel="stylesheet" href="../style.css"> <!-- Ссылка на файл стилей в корне -->
+    <title>Инженерные заметки и кейсы — AEROSYSTEM</title>
+    <link rel="stylesheet" href="../../style.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2RCZG1NW7D"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-2RCZG1NW7D');
     </script>
+    <link rel="alternate" hreflang="en" href="https://aerosystem.tech" />
+    <link rel="alternate" hreflang="ru" href="https://aerosystem.tech" />
+    <link rel="alternate" hreflang="x-default" href="https://aerosystem.tech" />
 </head>
 
 <body>
@@ -22,91 +24,103 @@
     <header class="site-header">
         <div class="header-container">
             <div class="logo">
-                <a href="/" class="logo-link" style="text-decoration: none;"><span
+                <a href="/ru" class="logo-link" style="text-decoration: none;"><span
                         class="logo-text">AEROSYSTEM</span></a>
             </div>
             <nav class="main-nav">
-                <a href="/blog" class="nav-link active" style="color: var(--text-primary);">Blog</a>
-                <a href="/#contacts" class="nav-link">Contact</a>
+                <a href="/ru/blog" class="nav-link active" style="color: var(--text-primary);">Блог</a>
+                <a href="/ru/#contacts" class="nav-link">Контакты</a>
+                <a href="/blog" class="nav-link"
+                    style="font-weight: bold; color: var(--text-secondary); margin-left: 15px;">EN</a>
             </nav>
         </div>
     </header>
 
     <main class="site-main">
         <section class="blog-list-block">
-            <div class="container">
-                <h1 style="margin-bottom: 40px;">Engineering Notes & Case Studies</h1>
+            <div class="container" style="max-width: 800px; padding: 40px 20px;">
+                <h1 style="margin-bottom: 40px; font-size: 2.2rem; font-weight: 600;">Блог и Статьи</h1>
 
-                <!-- Карточка новой статьи: Мониторинг холодильных комплексов -->
+                <!-- Карточка 1: Мониторинг систем охлаждения -->
                 <article class="blog-card"
-                    style="margin-bottom: 35px; padding-bottom: 30px; border-bottom: 1px solid var(--border-color);">
+                    style="margin-bottom: 45px; padding-bottom: 35px; border-bottom: 1px solid var(--border-color);">
                     <span class="post-date"
-                        style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">October
-                        2026</span>
-                    <h2 style="margin: 10px 0 15px 0; font-size: 1.6rem;"><a
-                            href="reviving-android-cooling-monitor-via-ieee-12207.html"
+                        style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; font-family: monospace;">Октябрь
+                        2026 // Технический разбор</span>
+                    <h2 style="margin: 10px 0 15px 0; font-size: 1.6rem; font-weight: 500;">
+                        <a href="reviving-android-cooling-system-monitor.html"
                             style="color: var(--text-primary); text-decoration: none; transition: opacity 0.2s;"
-                            onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">Reviving Android
-                            Cooling System Monitor via IEEE 12207</a></h2>
-                    <p style="margin-bottom: 15px;">A engineering track on recovering a decaying legacy monitoring
-                        monolith for industrial cooling units. Re-architecting boundaries, purging transitive
-                        open-source bloat, and stabilizing runtime execution up to a 99.98% crash-free rate under strict
-                        IEEE 12207 lifecycle processes.</p>
-                    <a href="reviving-android-cooling-monitor-via-ieee-12207.html"
-                        style="color: var(--text-primary); font-size: 0.95rem; font-weight: 500; text-decoration: underline;">Read
-                        Case Study →</a>
+                            onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+                            Реанимация Android-мониторинга систем охлаждающих установок по стандарту IEEE 12207
+                        </a>
+                    </h2>
+                    <p style="margin-bottom: 15px; line-height: 1.6; text-align: justify;">Разбор
+                        восстановления Android приложения для мониторинга промышленных охлаждающих
+                        установок. Перепроектирование архитектуры, приведение в порядок транзитивных open-source библиотек
+                        и стабилизация времени выполнения до уровня 99.98% crash-free в соответствии с процессами
+                        жизненного цикла IEEE 12207.</p>
+                    <a href="reviving-android-cooling-system-monitor.html"
+                        style="color: var(--text-primary); font-size: 0.95rem; font-weight: 500; text-decoration: underline;">Читать</a>
                 </article>
 
-                <!-- Карточка статьи: TDD Рефакторинг платёжного модуля -->
+                <!-- Карточка 2: Рефакторинг модуля оплат по TDD -->
                 <article class="blog-card"
-                    style="margin-bottom: 35px; padding-bottom: 30px; border-bottom: 1px solid var(--border-color);">
+                    style="margin-bottom: 45px; padding-bottom: 35px; border-bottom: 1px solid var(--border-color);">
                     <span class="post-date"
-                        style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">June
-                        2026</span>
-                    <h2 style="margin: 10px 0 15px 0; font-size: 1.6rem;"><a
-                            href="how-i-rewrote-an-android-payment-module.html"
+                        style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; font-family: monospace;">Июнь
+                        2026 // Тестирование</span>
+                    <h2 style="margin: 10px 0 15px 0; font-size: 1.6rem; font-weight: 500;">
+                        <a href="how-i-rewrote-an-android-payment-module.html"
                             style="color: var(--text-primary); text-decoration: none; transition: opacity 0.2s;"
-                            onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">Saving from
-                            Chaos: Refactoring via TDD</a></h2>
-                    <p style="margin-bottom: 15px;">A detailed breakdown of reverse-engineering a decaying legacy
-                        payment flow, transforming a 95% failure-prone architecture into a clean, test-driven, and
-                        fault-tolerant system without disrupting production infrastructure.</p>
+                            onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+                            Спасение от хаоса: рефакторинг через TDD
+                        </a>
+                    </h2>
+                    <p style="margin-bottom: 15px; line-height: 1.6; text-align: justify;">Подробный разбор рефакторинга
+                        и итерационного восстановления платежного модуля Android приложения. Как правильная инженерия в Android приложении приносит деньги бизнесу.</p>
                     <a href="how-i-rewrote-an-android-payment-module.html"
-                        style="color: var(--text-primary); font-size: 0.95rem; font-weight: 500; text-decoration: underline;">Read
-                        Case Study →</a>
+                        style="color: var(--text-primary); font-size: 0.95rem; font-weight: 500; text-decoration: underline;">Читать</a>
                 </article>
 
-                <!-- Карточка статьи: TDD Рефакторинг платёжного модуля -->
+                <!-- Карточка 3: Апп-виджеты B2B -->
                 <article class="blog-card"
-                    style="margin-bottom: 35px; padding-bottom: 30px; border-bottom: 1px solid var(--border-color);">
+                    style="margin-bottom: 45px; padding-bottom: 35px; border-bottom: 1px solid var(--border-color);">
                     <span class="post-date"
-                        style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">December
-                        2025</span>
-                    <h2 style="margin: 10px 0 15px 0; font-size: 1.6rem;"><a
-                            href="from-12-second-friction-to-instant-checkout.html"
+                        style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; font-family: monospace;">Декабрь
+                        2025 // UX и Оптимизация</span>
+                    <h2 style="margin: 10px 0 15px 0; font-size: 1.6rem; font-weight: 500;">
+                        <a href="from-12-second-friction-to-instant-checkout.html"
                             style="color: var(--text-primary); text-decoration: none; transition: opacity 0.2s;"
-                            onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">From 12-Second
-                            Friction to Instant Checkout: B2B App Widget Refactoring</a></h2>
-                    <p style="margin-bottom: 15px;">An architectural breakdown of optimizing a transport payment flow.
-                        The case study demonstrates how restructuring the user experience and introducing native Android
-                        App Widgets eliminated redundant screens and data sources, reducing checkout latency from 12
-                        seconds and generating over $3,000 in monthly net profit.</p>
+                            onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+                            От 12-секундного ожидания к мгновенной оплате: рефакторинг B2B виджета
+                        </a>
+                    </h2>
+                    <p style="margin-bottom: 15px; line-height: 1.6; text-align: justify;">Разбор
+                        оптимизации сценария платежей. Кейс наглядно демонстрирует, как перепроектирование
+                        UI/UX и внедрение нативных Android App Widgets устранило лишние экраны, сократив платежный флоу
+                        с 12 секунд и принеся более $3,000 чистой ежемесячной прибыли.</p>
                     <a href="from-12-second-friction-to-instant-checkout.html"
-                        style="color: var(--text-primary); font-size: 0.95rem; font-weight: 500; text-decoration: underline;">Read
-                        Case Study →</a>
+                        style="color: var(--text-primary); font-size: 0.95rem; font-weight: 500; text-decoration: underline;">Читать</a>
                 </article>
 
+                <!-- Карточка 4: СМС-фрод на кукурузе -->
                 <article class="blog-card"
-                    style="margin-bottom: 35px; padding-bottom: 30px; border-bottom: 1px solid var(--border-color);">
+                    style="margin-bottom: 45px; padding-bottom: 35px; border-bottom: 1px solid var(--border-color);">
                     <span class="post-date"
-                        style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">October 2025</span>
-                    <h2 style="margin: 10px 0 15px 0; font-size: 1.6rem;"><a
-                            href="golden_corn_or_sms.html"
+                        style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; font-family: monospace;">Октябрь
+                        2025 // Безопасность</span>
+                    <h2 style="margin: 10px 0 15px 0; font-size: 1.6rem; font-weight: 500;">
+                        <a href="golden-corn-sms-fraud.html"
                             style="color: var(--text-primary); text-decoration: none; transition: opacity 0.2s;"
-                            onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">Golden Corn Or SMS Fraud $2,000 In Agricultural App</a></h2>
-                    <p style="margin-bottom: 15px;">A real-world breakdown of how an unverified, AI-assisted shortcut cost an agricultural company $2,124 in SMS fraud bills due to critical API exposures and lack of basic security protocols.</p>
-                    <a href="golden_corn_or_sms.html"
-                        style="color: var(--text-primary); font-size: 0.95rem; font-weight: 500; text-decoration: underline;">Read Case Study →</a>
+                            onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+                            «Золотая кукуруза», или СМС-фрод на $2,000 в сельскохозяйственном приложении
+                        </a>
+                    </h2>
+                    <p style="margin-bottom: 15px; line-height: 1.6; text-align: justify;">Разбор реального инцидента:
+                        как непроверенный код, написанный ИИ-помощником, обошелся агропредприятию в
+                        $2,124.</p>
+                    <a href="golden-corn-sms-fraud.html"
+                        style="color: var(--text-primary); font-size: 0.95rem; font-weight: 500; text-decoration: underline;">Читать</a>
                 </article>
 
             </div>
@@ -116,7 +130,7 @@
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-info">
-                <p>Inquiries: <a href="mailto:alex@aerosystem.tech">alex@aerosystem.tech</a></p>
+                <p>По всем вопросам: <a href="mailto:alex@aerosystem.tech">alex@aerosystem.tech</a></p>
             </div>
             <div class="footer-social">
                 <a href="https://www.threads.com/@le.xus470" target="_blank" rel="noopener">Threads</a>

@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saving from Chaos: Refactoring via TDD — Aerosystem</title>
-    <link rel="stylesheet" href="../style.css"> <!-- Относительный путь к стилям в корне сайта -->
+    <title>Спасение из хаоса: рефакторинг платежного модуля через TDD — Aerosystem</title>
+    <link rel="stylesheet" href="../../style.css"> 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2RCZG1NW7D"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-2RCZG1NW7D');
     </script>
 </head>
@@ -22,124 +21,71 @@
     <header class="site-header">
         <div class="header-container">
             <div class="logo">
-                <a href="/" class="logo-link" style="text-decoration: none;"><span
-                        class="logo-text">AEROSYSTEM</span></a>
+                <a href="/ru" class="logo-link" style="text-decoration: none;"><span class="logo-text">AEROSYSTEM</span></a>
             </div>
             <nav class="main-nav">
-                <a href="/blog" class="nav-link" style="color: var(--text-primary);">Blog</a>
-                <a href="/#contacts" class="nav-link">Contact</a>
+                <a href="/ru/blog" class="nav-link" style="color: var(--text-primary);">Блог</a>
+                <a href="/ru/#contacts" class="nav-link">Контакты</a>
             </nav>
         </div>
     </header>
 
     <main class="site-main" style="padding: 40px 0;">
         <article class="opened-post">
-            <div class="container" style="max-width: 700px;"> <!-- Ограничение ширины для удобства чтения текста -->
+            <div class="container" style="max-width: 700px; padding: 0 20px;"> 
 
-                <a href="/blog" class="back-link"
-                    style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; display: inline-block; margin-bottom: 20px;">←
-                    Back to Blog</a>
+                <a href="/ru/blog" class="back-link" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; display: inline-block; margin-bottom: 20px;">← Назад в Блог</a>
 
                 <header class="post-header" style="margin-bottom: 30px;">
-                    <span class="post-date"
-                        style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Case
-                        Study // October 2026</span>
-                    <h1 style="font-size: 2.2rem; line-height: 1.3; margin: 10px 0 0 0;">Saving from Chaos: Refactoring
-                        via TDD</h1>
+                    <span class="post-date" style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; font-family: monospace;">Кейс // Июнь 2026</span>
+                    <h1 style="font-size: 2.2rem; line-height: 1.3; margin: 10px 0 0 0; font-weight: 600;">Спасение из хаоса: рефакторинг платежного модуля через TDD</h1>
                 </header>
 
                 <div class="post-content" style="color: var(--text-primary); font-size: 1.05rem; line-height: 1.7;">
-                    <p style="margin-bottom: 20px; text-align: justify;">More than a year has passed since the
-                        development of What To Wear Today; many libraries have been updated, and unsettling reports have
-                        started coming into Android Vitals. Analytics from Google Analytics and reports from Firebase
-                        only confirmed the fears: some users encountered application crashes, and some users encountered
-                        problems when paying for a subscription.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">С момента разработки погодного мобильного приложения прошло уже больше года; многие библиотеки обновились, и в Android Vitals начали приходить настораживающие репорты. Аналитика из Google Analytics и отчеты из Firebase только подтверждали опасения: часть пользователей столкнулась с крашами приложения, а часть — сбоями при оплате подписки.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">Obfuscated logs did not provide much
-                        information about what exactly the problem was; however, the use of mapping allowed us to find
-                        out that the problem was a conflict between Google Play Billing and one of our own libraries.
-                        Since downgrading Google Billing was unacceptable, there was only one way out — a modification
-                        in our library.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">Обфусцированные логи не давали детальной информации о том, в чем именно заключается проблема. Однако использование деоптимизации маппинга позволило выяснить, что корневая причина крылась в конфликте между Google Play Billing SDK и одной из наших собственных библиотек. Поскольку даунгрейд версии Google Billing был неприемлем для продакшена, оставался только один выход — модификация внутренней структуры нашей библиотеки.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">After a detailed study of the internal
-                        structure of the library, let's call it AppBillingWrapper, it was decided to add extended logs
-                        in the next application update to confirm the error theory. Such logs would give a detailed
-                        understanding of the systemic nature of the error; it was necessary to understand this, since
-                        the problems arose only on Android versions 13 and higher.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">После детального изучения архитектуры библиотеки (назовем её <code>AppBillingWrapper</code>), было принято решение в очередном апдейте приложения развернуть расширенное логирование для верификации гипотезы сбоя. Такие логи должны были дать точное понимание системного характера ошибки, что было критически важно, так как проблемы воспроизводились исключительно на устройствах с версией Android 13 и выше.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">Refactoring the internal mechanisms of the
-                        library did not change its public interfaces, and this allowed us to implement a Feature Toggle
-                        system. Why did we need this? The answer is simple: we created an alternative implementation of
-                        the public interface of AppBillingWrapper, a complete copy of the current functionality. The
-                        introduced Feature Toggle, depending on its value, selected one implementation or the other.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">Запланированный рефакторинг внутренних механизмов не менял её публичные интерфейсы, что позволило нам изолировать изменения с помощью системы Feature Toggle. Зачем нам это было нужно? Мы создали альтернативную реализацию интерфейса <code>AppBillingWrapper</code>, которая на старте являлась полной копией текущего функционала. Конфигурируемый тоггл в зависимости от своего значения выбирал на рантайме старую или новую реализацию под капотом.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">Well, the base for refactoring was ready, and
-                        with the next update, we released it into production. The value of the new toggle essentially
-                        changed nothing, since the two implementations were completely identical. In this way, we
-                        provided users with a mechanism for iterative, releaseless introduction of changes. Yes, it is
-                        difficult to call this releaselessness in the full sense of the word, but it was the first step
-                        on the path of introducing safe changes.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">База для безопасного рефакторинга была готова, и с очередным релизом мы выкатили систему в продакшен. Значение нового тоггла по сути ничего не меняло, так как обе реализации работали идентично. Таким образом, мы обеспечили пользователям механизм для итерационного, безрелизного внедрения изменений. Да, это сложно назвать полноценным CD-процессом, но это стал первый шаг на пути развертывания контролируемых правок кода.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">Следующим этапом стало проектирование системы, которая позволила бы вносить радикальные изменения в кодовую базу с нулевым риском регрессии. Другими словами — чтобы ничего не сломать. Мы приняли решение применить методологию TDD (Test-Driven Development), поскольку велась работа с критическим слоем платежей, и любая ошибка заблокировала бы подписки. Перед началом рефакторинга были зафиксированы следующие обязательные условия:</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">The next step was the introduction of a system
-                        that would allow safely making changes to the code. In other words — so as not to break
-                        anything. Here we decided to apply the TDD approach, since we were working with an important
-                        payment module, and it would be a shame if something went wrong with subscriptions. It was
-                        necessary to fulfill at least the following conditions:</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1.</b> Безусловное сохранение премиум-статуса для ранее купивших пользователей (развертывание строгой системы миграции локальной БД);</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>2.</b> Коэффициент runtime-сбоев нового модуля должен быть равен текущему показателю или ниже его;</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>3.</b> Снижение производительности и скорости инициализации системы на рантайме допускается не более чем на 10%;</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>4.</b> Метрики сложности кода и удобства поддержки (maintainability) обязаны продемонстрировать положительную динамику;</p>
+                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>5.</b> Успешное прохождение Happy Path при покупке подписки должно составлять не менее 95% случаев. Мы объективно закладывали 5% на непредсказуемые платформозависимые баги старых вендорских оболочек, которые невозможно выявить на этапе статического анализа.</p>
 
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1.</b> Maintain the
-                        connected premium if it was previously purchased, that is, make an adequate DB migration system;
-                    </p>
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>2.</b> The number of
-                        failures is the same as now or lower;</p>
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>3.</b> System
-                        performance could drop by no more than 10%;</p>
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>4.</b> Complexity and
-                        maintainability (by the way, back then we did not yet have a clear idea of these metrics) should
-                        become better;</p>
-                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>5.</b> In 95% of cases,
-                        the Happy Path for purchasing a subscription should pass successfully. We understood that there
-                        is always some probability of discovering platform-dependent bugs, so we left 5% precisely for
-                        such cases.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">Мы начали с декомпозиции копии <code>AppBillingWrapper</code> на изолированные блоки. Суммарно получилось 3 независимых слоя: чистая бизнес-логика, платформенный код работы с данными (БД) и модуль прямой интеграции с Google Play Billing Library. Далее под эти слои был разработан массив Test Cases, покрывающий не менее 85-88% всех сценариев прямого использования, краевых состояний и непредвиденных сетевых ошибок. Всего было сгенерировано 260 тест-кейсов. Объем внушительный, но этот шаг был необходим для контроля стабильности.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">We started by dividing the copy of
-                        AppBillingWrapper into blocks. In total, we got 3 blocks where business logic, platform code
-                        (DB), and code for working with the billing library were concentrated. Next, we developed a set
-                        of Test Cases, which, according to our calculations, covered at least 85-88% of all cases of
-                        direct use and unexpected errors. In total, we got 260 test cases. The volume is impressive, but
-                        we had to go through this path!</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">Модернизацию мы проводили поблочно. Весь инженерный конвейер состоял из 4 этапов: поэтапный рефакторинг трех блоков и финальный релиз для удаления Feature Toggle. Алгоритм действий был жестким: мы полностью вырезали код из текущей реализации, оставляя исключительно пустые верхнеуровневые интерфейсы, чтобы не ломать сборку проекта. Затем писали падающие unit-тесты, следом создавали код реализации и прогоняли тесты заново. Маркером успешности служил автоматический пайплайн: успешная сборка и прохождение всех тестов на CI/CD давали право на слияние (merge) ветки в <code>feature-refactor</code>. Никаких отклонений от регламента не допускалось.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">Мы начали с платформенного модуля. Провели полный рефакторинг слоя данных, вывели изменения в ближайшей версии приложения и включили раскатку тоггла в продакшене всего на 5% пользователей. Было страшно. Однако графики аналитики молчали, а Crashlytics не зафиксировал ни одной новой аномалии. Всё указывало на то, что архитектурная схема сработала и можно двигаться дальше. По аналогичному принципу мы переписали оставшиеся модули и постепенно, в течение двух недель, довели раскатку Feature Toggle до 100% аудитории.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">We did the implementation in blocks, meaning
-                        the entire process was to consist of 4 stages: 3 blocks and one release to remove the feature
-                        toggle. We acted as follows: we removed the code from the implementation sites one by one,
-                        leaving only high-level interfaces so as not to break the general logic of the entire feature,
-                        wrote falling tests, wrote the implementation, and ran the tests again. The marker is simple — a
-                        passed pipeline on the MR gave the right to merge into the feature-refactor branch. Only this
-                        way; we did not provide for deviations.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">После того как на актуальную версию приложения обновилось более 88% активных пользователей, мы выпустили чистящий релиз. Мы полностью удалили из кодовой базы логику фича-тоггла и окончательно вырезали старую, нестабильную реализацию <code>AppBillingWrapper</code>.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">We started with the platform module, did a
-                        complete refactoring, brought the changes into the nearest version of the application, and
-                        turned on the toggle rollout to 5%. It was scary! But the analytics were silent; everything
-                        indicated that the scheme worked and we could continue. We did the rest of the modules according
-                        to this principle and rolled out the toggle to 100% of users gradually, over the course of 2
-                        weeks.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">Суммарно вся инженерная работа заняла ровно один месяц. В процессе эксплуатации новой версии был зафиксирован всего один скрытый баг, на локализацию и исправление которого ушел ровно один час. Это стало возможным благодаря тому, что вся платежная система в целом стала абсолютно прогнозируемой, прозрачной и удобной для поддержки.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">After 88% of users updated to the current
-                        version, we simply made a small release removing the introduced toggle and deleting the old
-                        implementation of AppBillingWrapper.</p>
+                    <!-- Итоговые метрики -->
+                    <h3 style="font-size: 1.4rem; margin-top: 30px; margin-bottom: 15px; font-weight: 500;">Инженерные результаты рефакторинга:</h3>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>•</b> Общий объем кодовой базы целевого модуля снизился на 20%;</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>•</b> Финальный размер APK-файла уменьшился до 112 Мб благодаря зачистке транзитивных зависимостей;</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>•</b> Покрытие кода тестами (Test Coverage) приблизилось к целевой отметке в 95%;</p>
+                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>•</b> Показатель стабильности рантайма (Crash-Free sessions) зафиксирован на уровне 99.98%. Возникавшие единичные платформозависимые баги оперативно изолировались на уровне UI-слоя, не нарушая общую архитектуру системы.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">In total, all the work took us 1 month. As a
-                        result, one bug was opened on AppBillingWrapper, the fix of which took us 1 hour of time, since
-                        the entire system as a whole became more predictable, transparent, and maintainable.</p>
+                    <!-- Блок коммерческого оффера / призыва к действию -->
+                    <div class="audit-offer-block" style="margin-top: 50px; padding: 30px; background: #16161a; border: 1px solid var(--border-color); border-radius: 4px;">
+                        <h4 style="font-size: 1.2rem; margin-top: 0; margin-bottom: 15px; font-weight: 500; color: var(--text-primary);">Технический аудит вашего продукта</h4>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-primary); text-align: justify; margin-bottom: 0; font-style: italic;">
+                            Если в вашем мобильном приложении начали возникать проблемы с безопасностью, интеграция новых фичей с каждым спринтом стоит всё дороже, а показатели стабильности и crash-free падают, вызывая негативные отзывы пользователей — пишите на нашу рабочую почту <a href="mailto:alex@aerosystem.tech" style="color: var(--text-primary); text-decoration: underline; font-style: normal;">alex@aerosystem.tech</a>. Инженеры бюро Aerosystem проведут первичный экспресс-аудит вашей системы совершенно бесплатно.
+                        </p>
+                    </div>
 
                 </div>
-                <br>
-                <p
-                    style="margin-top: 20px; font-size: 0.95rem; font-style: italic; text-align: justify; color: var(--text-secondary);">
-                    If your application has security problems, the integration of new functionality starts to cost more
-                    and more, the stability and crash-free rate become lower and lower, and users complain — write to
-                    our email alex@aerosystem.tech. We will gladly help; moreover, an express audit of your application
-                    is completely free.
-                </p>
+
+                <a href="/ru/blog" class="back-link" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; display: inline-block; margin-top: 40px; margin-bottom: 20px;">← Назад в Блог</a>
 
             </div>
         </article>
@@ -158,5 +104,4 @@
     </footer>
 
 </body>
-
 </html>

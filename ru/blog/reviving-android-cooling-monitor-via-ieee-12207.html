@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reviving Android Cooling System Monitor via IEEE 12207 — Aerosystem</title>
-    <link rel="stylesheet" href="../style.css"> <!-- Относительный путь к стилям в корне сайта -->
+    <title>Реанимация Android-мониторинга систем охлаждения по стандарту IEEE 12207 — Aerosystem</title>
+    <link rel="stylesheet" href="../../style.css"> 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2RCZG1NW7D"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-2RCZG1NW7D');
     </script>
 </head>
@@ -22,221 +21,97 @@
     <header class="site-header">
         <div class="header-container">
             <div class="logo">
-                <a href="/" class="logo-link" style="text-decoration: none;"><span
-                        class="logo-text">AEROSYSTEM</span></a>
+                <a href="/ru" class="logo-link" style="text-decoration: none;"><span class="logo-text">AEROSYSTEM</span></a>
             </div>
             <nav class="main-nav">
-                <a href="/blog" class="nav-link" style="color: var(--text-primary);">Blog</a>
-                <a href="/#contacts" class="nav-link">Contact</a>
+                <a href="/ru/blog" class="nav-link" style="color: var(--text-primary);">Блог</a>
+                <a href="/ru/#contacts" class="nav-link">Контакты</a>
             </nav>
         </div>
     </header>
 
     <main class="site-main" style="padding: 40px 0;">
         <article class="opened-post">
-            <div class="container" style="max-width: 700px;"> <!-- Ограничение ширины для удобства чтения текста -->
+            <div class="container" style="max-width: 700px; padding: 0 20px;"> 
 
-                <a href="/blog" class="back-link"
-                    style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; display: inline-block; margin-bottom: 20px;">←
-                    Back to Blog</a>
+                <a href="/ru/blog" class="back-link" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; display: inline-block; margin-bottom: 20px;">← Назад в Блог</a>
 
                 <header class="post-header" style="margin-bottom: 30px;">
-                    <span class="post-date"
-                        style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Case
-                        Study // October 2026</span>
-                    <h1 style="font-size: 2.2rem; line-height: 1.3; margin: 10px 0 0 0;">Reviving Android Cooling System
-                        Monitor via IEEE 12207</h1>
+                    <span class="post-date" style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; font-family: monospace;">Кейс // Октябрь 2026</span>
+                    <h1 style="font-size: 2.2rem; line-height: 1.3; margin: 10px 0 0 0; font-weight: 600;">Реанимация Android-мониторинга систем охлаждения по стандарту IEEE 12207</h1>
                 </header>
 
                 <div class="post-content" style="color: var(--text-primary); font-size: 1.05rem; line-height: 1.7;">
-                    <p style="margin-bottom: 20px; text-align: justify;">In September 2025, the technological bureau
-                        aerosystem.tech accepted a legacy Android tablet application for a comprehensive technical and
-                        stability audit. The software's targeted operational purpose is the automated aggregation,
-                        validation, and logging of real-time monitoring telematics from industrial cooling complexes
-                        operating at extreme capacities.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">В сентябре 2025 года техническое бюро aerosystem.tech приняло на комплексный технический аудит устаревшее Android-приложение для планшетных устройств. Основная задача этого программного обеспечения — сбор, валидация и фиксация телеметрических данных высокомощных промышленных холодильных установок. Проект непрерывно развивался с 2018 года. За свой семилетний жизненный цикл кодовая база сменила четырех разных подрядчиков по разработке, окончательно превратившись в сильно связанный, хаотичный монолит.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">The project had been evolving since 2018. Over
-                        its 7-year continuous development lifecycle, the codebase passed through 4 different external
-                        vendors, gradually mutating into a highly coupled, chaotic monolith. The core technical
-                        showstoppers identified at the start of our anti-crisis engineering track included:</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">Инженерный аудит подтвердил, что проект стремительно деградирует под управлением накопленного технического долга. На старте восстановительного трека мы выявили несколько критических узких мест:</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;"><b>Architectural Degradation:</b> A rigid,
-                        uncontrolled mix of Java (accounting for 25% of the codebase) and Kotlin without any defined
-                        layer boundaries. The software contained multiple obsolete, partially integrated architectural
-                        design patterns left by previous vendors.</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1.</b> Нестабильная смесь Java (составляющая 25% кодовой базы) и Kotlin с полным отсутствием разделения обязанностей или четких границ слоев;</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>2.</b> Активная интеграция более 60 различных сторонних библиотек с открытым исходным кодом, что вызывало деструктивные конфликты транзитивных зависимостей и раздувало размер финального продакшн-APK до 450 МБ;</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>3.</b> Интенсивное использование неконтролируемых ИИ-ассистентов кодинга в течение последних шести месяцев перед аудитом, что привело к тяжелым проблемам зацепления кода и созданию огромных, переусложненных классов;</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>4.</b> Полное нарушение обратной совместимости, приводившее к критическим падениям на рантайме в средах Android 15 и 16 из-за необработанных вызовов устаревших (deprecated) API;</p>
+                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>5.</b> Покрытие автоматическими тестами ниже 5% в сочетании с высокой плотностью критических дефектов на продакшене, что требовало дорогостоящих круглосуточных дежурств инженеров поддержки для ручного устранения сбоев системы в ночные смены.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;"><b>Dependency Bloat:</b> The system integrated
-                        over 60 third-party open-source libraries. Severe transitive dependency conflicts resulted in
-                        duplicate binaries, pushing the final production APK footprint to an unacceptable 450 MB.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">Бизнес-ограничение было жестким: мы были обязаны развернуть стабильную, готовую к производству альфа-сборку для полевых испытаний строго в 3-месячный срок. Международный стандарт IEEE 12207, регламентирующий процессы жизненного цикла системного и программного обеспечения, был выбран в качестве официальной методологии для реализации стратегии рефакторинга.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">Техническая документация внутри Confluence не обновлялась с февраля 2022 года. Пайплайны автоматизации и механизмы отчетности о дефектах (GitLab CI и Allure) были полностью сломаны и находились в офлайне. В прямом согласовании с заинтересованными сторонами продукта наша команда разработала новое техническое задание, определившее более 200 измеримых технических и продуктовых метрик. Этот документ послужил основой для жесткой матрицы Use Cases и Test Cases, нацеленных на следующие ключевые параметры:</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;"><b>Generative Technical Debt:</b> For the last
-                        6 months, code additions were pushed rapidly into production using unguided AI assistance. This
-                        approach caused an aggressive spike in coupling and heavily overinflated class definitions.</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1.</b> Жесткие лимиты на ежедневные системные сбои, включая инциденты ANR, исключения времени выполнения и краши приложения;</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>2.</b> Максимально допустимая частота сбоев транзакций в рамках основного пользовательского сценария отправки телеметрии компрессорной станции;</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>3.</b> Строгие пороги удержания памяти для активных пользовательских сессий с целью предотвращения замедления работы системы;</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>4.</b> Гарантии адаптации компонентов UI во время динамических изменений конфигурации, таких как рантайм-смена локализации, изменение ориентации экрана и режим Split-Screen;</p>
+                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>5.</b> Архитектура и границы локального кэширования для обеспечения бесперебойной автономной работы с последующей автоматической транзакционной пакетной синхронизацией.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;"><b>Runtime Instability:</b> Complete breakdown
-                        of backward compatibility. The software consistently crashed upon launch in Android 15 and 16
-                        target environments due to the presence of unmitigated Deprecated APIs.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">Изменение архитектуры системы было разделено на два параллельных операционных трека: модульная реструктуризация монолитного ядра приложения и глубокий аудит внешних зависимостей для инкапсуляции логики критических библиотек внутри домена продукта с удалением избыточных транзитивных артефактов.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;"><b>Low Fault Tolerance:</b> Automated test
-                        coverage had dropped below 5%. The resulting density of critical runtime crashes in production
-                        environments forced the client to maintain continuous engineering support squads to manually
-                        resolve application failures during night shifts.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">На этапе высокоуровневого проектирования (HLD) вся структура платформы была разделена на изолированные функциональные слои. Мы установили схемы взаимодействия макромодулей и границы компонентов. Поскольку извлечение компонентов из устаревшего монолита выполнялось итеративно, сохранение целостности интерфейсов без остановки конвейера сборки было сопряжено с высоким риском. Для минимизации этого риска на уровне Merge Request в GitLab CI мы интегрировали три защитных барьера:</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;"><b>Business Constraints:</b> Deploy a fully
-                        stabilized, operational alpha build into live production environments within a strict 3-month
-                        hard deadline. To build a reliable workflow, we adopted the international standard <b>IEEE
-                            12207</b>, which strictly defines software and systems lifecycle processes.</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1.</b> Строгие проверки статического анализа кода, выполняемые с помощью кастомных правил Lint;</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>2.</b> Обязательное автоматическое выполнение полных пайплайнов Unit и UI тестов при каждом удаленном триггере сборки;</p>
+                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>3.</b> Внедрение Feature Toggles для изоляции функциональных изменений в сочетании с целевым удаленным логированием технических ошибок.</p>
 
-                    <h2 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; font-weight: 700;">Phase 1.
-                        Requirements Engineering and Decomposition (IEEE 12207)</h2>
+                    <p style="margin-bottom: 20px; text-align: justify;">Переходя к стадии низкоуровневого проектирования (LLD), наша инженерная команда сосредоточилась на разработке явных сигнатур методов, локальных структур данных и операционных контрактов, управляющих доставкой данных между модулями. Наличие валидированных HLD-диаграмм позволило нам ускорить составление технических RFC и спецификаций требований к программному обеспечению (SRS).</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">Technical documentation inside Confluence had
-                        not been updated since February 2022. Automated testing and defect reporting pipelines (GitLab
-                        CI -> Allure) were entirely broken and defunct. Working in close alignment with the client's
-                        operational engineering stakeholders, we engineered a rigorous system requirement specification
-                        containing over 200 measurable technical and performance metrics. This specification was
-                        immediately mapped into a strict matrix of Use Cases and validation Test Cases.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">Этот процесс осуществлялся параллельно с генерацией функциональных Unit-тестов для конкретных целевых интерфейсов. В течение первых трех недель этого архитектурного трека мы успешно сформировали базовый комплект документации LLD и модульную матрицу тестирования, которая уже покрывала примерно 8–10% запланированной архитектуры системы. Аналитическая валидация выполнялась одновременно, чтобы гарантировать соответствие технических возможностей основным требованиям, и первые архитектурные блоки были отправлены напрямую в ветку разработки.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">На этапе основной разработки мы внедрили строгий подход Test-Driven Development (TDD) внутри операционного цикла Red-Green-Refactor. Код системы писался вертикальными технологическими срезами, а не горизонтальными выпусками фич. Инженер полностью собирал и досконально верифицировал слой Data Source изолированного модуля перед тем, как переходить к UI-компонентам представления. Данный подход обеспечил очевидные технические преимущества:</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">The core quantified baseline metrics targeted:
-                    </p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1.</b> Это устранило когнитивную нагрузку по удержанию массивного контекста распределенной легаси-системы в рабочей памяти инженеров;</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>2.</b> Это гарантировало, что в удаленные ветки попадал только исходный код, удовлетворяющий проверенным утверждениям тестов;</p>
+                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>3.</b> Мгновенная телеметрия из автоматизированных пайплайнов GitLab CI предотвращала попадание любого непроверенного или недокументированного кода в основную кодовую базу.</p>
 
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1.</b> Hard daily limits
-                        on system-level runtime failures (ANRs and application crashes);</p>
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>2.</b> Maximum allowable
-                        failure rates within the telemetry ingestion and transaction flow of compressor stations;</p>
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>3.</b> Hard session
-                        retention times in the tablet device's hardware memory;</p>
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>4.</b> Predictable UI
-                        component state integrity during dynamic runtime configuration updates (such as real-time
-                        localization shifts, tablet orientation toggles, and Split-Screen multitasking);</p>
-                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>5.</b> Strict local
-                        data-caching architecture and data-interchange boundaries to guarantee offline-first continuity
-                        followed by safe, atomic batch synchronization.</p>
-                    <h2 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; font-weight: 700;">Phase 2.
-                        High-Level Design (HLD)</h2>
+                    <p style="margin-bottom: 20px; text-align: justify;">Фаза полевой стабилизации и приемочные испытания клиентом стали главной проверкой для внедренного базиса документации IEEE 12207. Интеграция фреймворка Feature Toggle позволила нашей команде развертывать активные альфа-сборки напрямую на планшетах полевых техников на промышленных холодильных заводах без остановки основной скорости разработки.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">The monolithic application structure was split
-                        into isolated, decoupled functional modules. The core business logic previously handled by bulky
-                        external open-source dependencies was reverse-engineered and re-implemented natively inside the
-                        product boundaries. This move eliminated transitive dependency overhead and drastically cleaned
-                        up the classpath.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;"> Каждое замечание или модификация, запрошенная клиентом, фильтровались строго через формальный процесс управления изменениями: сопоставлялись со спецификациями LLD, дополнялись свежими тест-кейсами и только после этого отправлялись в разработку. Во время масштабных полевых испытаний на кастомных вендорских форках Android выявилось несколько специфических для платформы багов:</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">Because the decomposition of the monolith was
-                        executed iteratively, maintaining build stability and interface integrity across merge requests
-                        was critical. To mitigate regression risks, we deployed a three-layer automated defense circuit
-                        directly inside GitLab CI:</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1.</b> Исключения рендеринга табличных элементов данных при работе в режиме Split-Screen;</p>
+                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>2.</b> Завершение жизненного цикла Activity, вызванное агрессивными встроенными алгоритмами энергосбережения в вендорском слое ОС планшетов.</p>
 
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1.</b> Strict static
-                        analysis gates via customized Lint rules;</p>
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>2.</b> Mandatory
-                        execution of Unit and UI testing pipelines on every automated build;</p>
-                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>3.</b> Complete
-                        isolation of new architecture blocks behind Feature Toggles, paired with remote automated crash
-                        capturing.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">Благодаря жесткой изоляции наших архитектурных слоев, данные аномалии были быстро локализованы и исправлены хотфиксами исключительно внутри слоя представления UI. Корневая бизнес-логика и слои доступа к данным не потребовали никаких модификаций, что позволило полностью избежать дефектов регрессии и сохранить ядро системы защищенным.</p>
 
-                    <h2 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; font-weight: 700;">Phase 3.
-                        Low-Level Design (LLD)</h2>
+                    <p style="margin-bottom: 20px; text-align: justify;">В итоге, после 3 месяцев антикризисного трека восстановления под управлением стандарта IEEE 12207, приложение было успешно переведено в стабильные продакшн-среды. Были достигнуты следующие технические результаты:</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">During the Low-Level Design phase, we defined
-                        explicit method signatures, internal data structures, and deterministic inter-module
-                        communication contracts. Backed by solid HLD blueprints, the team ran the generation of RFC
-                        (Request for Comments) and SRS (Software Requirement Specification) documentation in parallel
-                        with writing Unit test cases for specific code interfaces.</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1.</b> Общий объем кодовой базы сократился на 20% за счет уничтожения мертвого кода, удаления дублирующихся компонентов и очистки шума от артефактов генеративного ИИ;</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>2.</b> Размер продакшн-APK упал с 450 МБ до 112 МБ благодаря отказу от неподдерживаемых внешних зависимостей и очистке транзитивных артефактов сборки;</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>3.</b> Покрытие автоматическими тестами спроектированной модульной архитектуры достигло 95%;</p>
+                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>4.</b> Стабильность рантайма достигла абсолютного базиса: показатель Crash-Free сессий зафиксировался на отметке 99.98%.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">Within the first 3 weeks of the track, we
-                        locked down the foundational LLD documentation along with a comprehensive modular testing
-                        matrix. This covered approximately 8–10% of the entire targeted system architecture before a
-                        single line of production code was written.</p>
+                    <p style="margin-bottom: 20px; text-align: justify;">Перевод платформы на отказоустойчивую архитектуру напрямую стабилизировал операционные метрики и оптимизировал расходы на поддержку продукта с точки зрения бизнеса:</p>
 
-                    <h2 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; font-weight: 700;">Phase 4.
-                        Test-Driven Development (TDD)</h2>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1.</b> Устранение ночных смен поддержки, которые ранее требовали двойной почасовой оплаты (x2), сократило прямые операционные расходы на поддержку на 40% благодаря достигнутой надежности системы;</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>2.</b> Отток пользователей, связанный с техническими сбоями (Churn Rate), снизился до 0% за счет стабилизации транзакционных процессов и устранения сбоев офлайн-синхронизации;</p>
+                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>3.</b> Корпоративные клиенты, ранее заморозившие сервисные соглашения из-за критических дефектов рантайма, полностью восстановили платные контракты на подписку в течение двух месяцев после альфа-релиза;</p>
+                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>4.</b> Расходы на трафик и CDN-дистрибуцию сократились в 4 раза пропорционально уменьшению размера APK при обновлении парка планшетов.</p>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">All core engineering was executed strictly via
-                        TDD (Test-Driven Development) workflows using the "Red-Green-Refactor" cycle. Feature code was
-                        delivered via vertical architectural slices: starting deep within the data layer (Data Source)
-                        of a given module up through the business logic to the view layer (UI layer).</p>
+                    <!-- Блок коммерческого оффера / призыва к действию -->
+                    <div class="audit-offer-block" style="margin-top: 50px; padding: 30px; background: #16161a; border: 1px solid var(--border-color); border-radius: 4px;">
+                        <h4 style="font-size: 1.2rem; margin-top: 0; margin-bottom: 15px; font-weight: 500; color: var(--text-primary);">Технический аудит вашего продукта</h4>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-primary); text-align: justify; margin-bottom: 0; font-style: italic;">
+                            Если в вашем мобильном приложении нарастают проблемы с безопасностью, интеграция новых фичей с каждым спринтом стоит всё дороже, а показатели стабильности и crash-free падают, вызывая негативные отзывы пользователей — пишите на нашу рабочую почту <a href="mailto:alex@aerosystem.tech" style="color: var(--text-primary); text-decoration: underline; font-style: normal;">alex@aerosystem.tech</a>. Инженеры бюро Aerosystem проведут первичный экспресс-аудит вашей системы совершенно бесплатно.
+                        </p>
+                    </div>
 
-                    <p style="margin-bottom: 20px; text-align: justify;">This approach eliminated the cognitive load of
-                        holding the entire legacy system's context in the engineers' heads. It guaranteed that code
-                        could only be merged into the primary repository if it completely satisfied the deterministic
-                        criteria of the pre-written automated tests.</p>
-
-                    <h2 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; font-weight: 700;">Phase 5.
-                        Field Stabilization and Acceptance Testing</h2>
-
-                    <p style="margin-bottom: 20px; text-align: justify;">The implementation of a robust Feature Toggle
-                        mechanism enabled the safe delivery of progressive test builds straight onto the operational
-                        tablets used by active cooling complex field engineers. This process was executed without
-                        interrupting the core monitoring workflows. Whenever runtime requirements shifted, the changes
-                        were first validated inside the LLD documentation, backed by newly compiled automated tests, and
-                        only then pushed into production coding tracks.</p>
-
-                    <p style="margin-bottom: 20px; text-align: justify;">During automated runs on highly customized,
-                        vendor-specific Android tablet firmware, several platform-dependent defects were identified:</p>
-
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1.</b> Rendering
-                        pipeline breaks within data-dense tables under Split-Screen operations;</p>
-                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>2.</b> Abrupt Activity
-                        lifecycle termination triggered by aggressive, undocumented battery-saver algorithms built into
-                        the vendor's hardware tablets.</p>
-
-                    <p style="margin-bottom: 20px; text-align: justify;">Thanks to the hard separation of architectural
-                        layers, these bugs were quickly isolated and mitigated entirely inside the isolated UI layer.
-                        The underlying business logic and Data layer remained completely untouched, eliminating any risk
-                        of widespread system regression.</p>
-                    <h2 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; font-weight: 700;">Technical
-                        Outcomes</h2>
-
-                    <p style="margin-bottom: 20px; text-align: justify;">Following a 3-month anti-crisis engineering
-                        track structured around the IEEE 12207 lifecycle framework, the application was successfully
-                        transitioned into stable production operations:</p>
-
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1. Codebase
-                            Optimization:</b> The total production source-code footprint was reduced by 20% by
-                        completely purging duplicate components and unverified generative AI debt.</p>
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>2. Distribution
-                            Efficiency:</b> The production APK file size dropped from 450 MB down to 112 MB due to the
-                        strict removal of redundant third-party library bloat.</p>
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>3. Quality
-                            Assurance:</b> Automated test coverage across the newly integrated modular architecture
-                        stabilized at a strict 95% threshold.</p>
-                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>4. Runtime
-                            Reliability:</b> The system's Crash-Free session rate settled firmly at an industry-leading
-                        99.98% benchmark.</p>
-
-                    <h2 style="font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; font-weight: 700;">Business
-                        Efficiency and Financial Metrics</h2>
-
-                    <p style="margin-bottom: 20px; text-align: justify;">Transitioning the software system to a
-                        fault-tolerant, modular architecture significantly improved key operational indicators and
-                        optimized the product's overall technical support budget:</p>
-
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>1. Liquidation of Night
-                            Support Shifts:</b> Achieving the targeted structural stability completely eliminated the
-                        need for continuous, around-the-clock emergency support squads. The total cancellation of night
-                        shifts—which previously required double hourly billing rates (x2)—reduced direct ongoing
-                        operational support expenses by <b>40%</b>.</p>
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>2. Client Base
-                            Retention:</b> Stabilizing the core telematics transaction flow and eliminating offline data
-                        loss brought technical-fault-driven customer churn (Churn Rate) down to a strict <b>0%</b>.</p>
-                    <p style="margin-bottom: 12px; padding-left: 20px; text-align: justify;"><b>3. Contract
-                            Recovery:</b> Enterprise clients who had previously frozen their service contracts due to
-                        critical runtime defects completely restored their active paid subscriptions within two months
-                        following the initial alpha deployment.</p>
-                    <p style="margin-bottom: 25px; padding-left: 20px; text-align: justify;"><b>4. Infrastructure Cost
-                            Mitigation:</b> Cutting the production APK size by a factor of 4 led to a directly
-                        proportional drop in content delivery network (CDN) bandwidth costs and traffic distribution
-                        fees during mass fleet updates across the tablet pool.</p>
                 </div>
-                <br>
-                <p
-                    style="margin-top: 20px; font-size: 0.95rem; font-style: italic; text-align: justify; color: var(--text-secondary);">
-                    If your application has security problems, the integration of new functionality starts to cost more
-                    and more, the stability and crash-free rate become lower and lower, and users complain — write to
-                    our email alex@aerosystem.tech. We will gladly help; moreover, an express audit of your application
-                    is completely free.
-                </p>
 
+                <a href="/ru/blog" class="back-link" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; display: inline-block; margin-top: 40px; margin-bottom: 20px;">← Назад в Блог</a>
 
             </div>
         </article>
@@ -255,5 +130,4 @@
     </footer>
 
 </body>
-
 </html>
