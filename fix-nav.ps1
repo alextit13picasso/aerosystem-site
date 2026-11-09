@@ -5,6 +5,7 @@ function U([int[]]$cp) { -join ($cp | ForEach-Object { [char]$_ }) }
 $ruBlog    = U 0x0411, 0x043b, 0x043e, 0x0433                      # Blog (RU)
 $ruAuto    = U 0x0410, 0x0432, 0x0442, 0x043e, 0x043c, 0x0430, 0x0442, 0x0438, 0x0437, 0x0430, 0x0446, 0x0438, 0x044f  # Automation (RU)
 $ruContact = U 0x041a, 0x043e, 0x043d, 0x0442, 0x0430, 0x043a, 0x0442, 0x044b  # Contacts (RU)
+$ruEdu     = U 0x041e, 0x0431, 0x0440, 0x0430, 0x0437, 0x043e, 0x0432, 0x0430, 0x043d, 0x0438, 0x0435  # Education (RU)
 
 $ind12 = ' ' * 12
 $ind16 = ' ' * 16
@@ -22,6 +23,7 @@ $ruNav = @(
     "$ind12<nav class=`"main-nav`">"
     "$ind16<a href=`"/ru/blog`" class=`"nav-link`">$ruBlog</a>"
     "$ind16<a href=`"/ru/automation.html`" class=`"nav-link`">$ruAuto</a>"
+    "$ind16<a href=`"/ru/repetitor.html`" class=`"nav-link`">$ruEdu</a>"
     "$ind16<a href=`"/ru/#contacts`" class=`"nav-link`">$ruContact</a>"
     "$ind16<a href=`"/`" class=`"nav-link`" style=`"font-weight: bold; color: var(--text-secondary); margin-left: 15px;`">EN</a>"
     "$ind12</nav>"
@@ -35,7 +37,7 @@ $enFiles = @('index.html', 'automation.html',
     'blog/how-i-rewrote-an-android-payment-module.html', 'blog/golden_corn_or_sms.html',
     'blog/from-12-second-friction-to-instant-checkout.html')
 
-$ruFiles = @('ru/index.html', 'ru/automation.html',
+$ruFiles = @('ru/index.html', 'ru/automation.html', 'ru/repetitor.html',
     'ru/blog/index.html', 'ru/blog/reviving-android-cooling-monitor-via-ieee-12207.html',
     'ru/blog/how-i-rewrote-an-android-payment-module.html', 'ru/blog/golden_corn_or_sms.html',
     'ru/blog/from-12-second-friction-to-instant-checkout.html')
