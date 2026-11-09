@@ -23,7 +23,7 @@ $ruNav = @(
     "$ind12<nav class=`"main-nav`">"
     "$ind16<a href=`"/ru/blog`" class=`"nav-link`">$ruBlog</a>"
     "$ind16<a href=`"/ru/automation.html`" class=`"nav-link`">$ruAuto</a>"
-    "$ind16<a href=`"/ru/repetitor.html`" class=`"nav-link`">$ruEdu</a>"
+    "$ind16<a href=`"/ru/mentor.html`" class=`"nav-link`">$ruEdu</a>"
     "$ind16<a href=`"/ru/#contacts`" class=`"nav-link`">$ruContact</a>"
     "$ind16<a href=`"/`" class=`"nav-link`" style=`"font-weight: bold; color: var(--text-secondary); margin-left: 15px;`">EN</a>"
     "$ind12</nav>"
@@ -37,7 +37,7 @@ $enFiles = @('index.html', 'automation.html',
     'blog/how-i-rewrote-an-android-payment-module.html', 'blog/golden_corn_or_sms.html',
     'blog/from-12-second-friction-to-instant-checkout.html')
 
-$ruFiles = @('ru/index.html', 'ru/automation.html', 'ru/repetitor.html',
+$ruFiles = @('ru/index.html', 'ru/automation.html', 'ru/mentor.html',
     'ru/blog/index.html', 'ru/blog/reviving-android-cooling-monitor-via-ieee-12207.html',
     'ru/blog/how-i-rewrote-an-android-payment-module.html', 'ru/blog/golden_corn_or_sms.html',
     'ru/blog/from-12-second-friction-to-instant-checkout.html')
