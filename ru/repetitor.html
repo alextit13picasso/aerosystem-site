@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Репетитор по Android-разработке — Aerosystem</title>
+    <meta name="description"
+        content="Индивидуальные онлайн-занятия по Android-разработке: Kotlin, Jetpack Compose, архитектура приложений и работа с ИИ-инструментами. Разбор вашего кода и ваших задач.">
+    <link rel="stylesheet" href="../style.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2RCZG1NW7D"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-2RCZG1NW7D');
+    </script>
+    <style>
+        .lesson-hero {
+            padding: 80px 0 60px 0;
+        }
+
+        .lesson-hero h1 {
+            font-size: 2.6rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .lesson-hero .lead {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #2f2f36;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .cta-btn:hover {
+            background: var(--accent-color);
+            border-color: #3f3f46;
+        }
+
+        .cta-wrap {
+            margin-top: 32px;
+        }
+
+        .lesson-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+
+        .lesson-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .lesson-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--accent-hover);
+            font-weight: 600;
+        }
+
+        .lesson-list li strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .card {
+            background: #16161a;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 26px 30px;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .note {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            border-left: 2px solid var(--border-color);
+            padding-left: 16px;
+            margin-top: 24px;
+        }
+
+        .price-value {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .price-value span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 22px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .faq-item p {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .lesson-hero {
+                padding: 50px 0 40px 0;
+            }
+
+            .lesson-hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .lesson-hero .lead {
+                font-size: 1.05rem;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .price-value {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/ru" class="logo-link" style="text-decoration: none;"><span
+                        class="logo-text">AEROSYSTEM</span></a>
+            </div>
+            <nav class="main-nav">
+                <a href="/ru/blog" class="nav-link">Блог</a>
+                <a href="/ru/automation.html" class="nav-link">Автоматизация</a>
+                <a href="/ru/repetitor.html" class="nav-link">Обучение</a>
+                <a href="/ru/#contacts" class="nav-link">Контакты</a>
+                <a href="/" class="nav-link" style="font-weight: bold; color: var(--text-secondary); margin-left: 15px;">EN</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+
+        <!-- Заголовок и оффер -->
+        <section class="hero-block lesson-hero">
+            <div class="container" style="max-width: 800px;">
+                <h1>Репетитор по Android-разработке</h1>
+                <p class="lead">
+                    Индивидуальные онлайн-занятия по Kotlin, Jetpack Compose и работе с ИИ-инструментами.
+                    Разбираем ваш код и задачи.
+                </p>
+                <div class="cta-wrap">
+                    <a href="https://t.me/alex_ch_13" target="_blank" rel="noopener" class="cta-btn">Написать в
+                        Telegram</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Кому подойдёт -->
+        <section style="padding: 60px 0;">
+            <div class="container" style="max-width: 800px;">
+                <h2>Кому это подойдёт</h2>
+                <p>
+                    Вы знаете основы Kotlin или Java и хотите быстрее расти в Android-разработке. Возможно, вы:
+                </p>
+                <ul class="lesson-list">
+                    <li>учите Android и упираетесь в темы, которые сложно разобрать самостоятельно;</li>
+                    <li>делаете pet-проект и не уверены, что код написан правильно;</li>
+                    <li>пользуетесь ИИ-инструментами, но не всегда понимаете, что именно они генерируют;</li>
+                    <li>готовитесь к собеседованиям и хотите потренироваться на реальных вопросах.</li>
+                </ul>
+                <p class="note">
+                    Если вы совсем не знакомы с программированием, лучше сначала освоить основы Kotlin
+                    самостоятельно.
+                </p>
+            </div>
+        </section>
+
+        <!-- С чем я помогаю -->
+        <section style="padding: 40px 0 60px 0;">
+            <div class="container" style="max-width: 800px;">
+                <h2>С чем я помогаю</h2>
+
+                <div class="card">
+                    <h3>Kotlin и Jetpack Compose</h3>
+                    <p>Язык, интерфейсы на Compose, состояние, навигация, типичные ошибки новичков.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Архитектура приложения</h3>
+                    <p>MVVM, MVI, ViewModel, корутины и Flow, Room, Hilt. Как разделять слои и почему именно так.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Работа с ИИ-инструментами</h3>
+                    <p>Как использовать Claude, Cursor, Copilot и подобные инструменты в разработке, как проверять
+                        сгенерированный код и где он чаще всего ошибается.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Подключение LLM в приложение</h3>
+                    <p>Запросы к API, структурированные ответы, обработка ошибок. Отдельно разбираем безопасность
+                        (почему нельзя хранить API-ключ в приложении) и контроль расходов на токены.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Разбор вашего кода и проекта</h3>
+                    <p>Смотрю ваш код, объясняю, что и почему стоит исправить, помогаю довести проект до состояния,
+                        которое не стыдно показать в портфолио.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Подготовка к собеседованию</h3>
+                    <p>Разбор технических вопросов, резюме и пробное интервью.</p>
+                </div>
+
+                <p class="note">Темы выбираем под вас.</p>
+            </div>
+        </section>
+
+        <!-- Как проходят занятия -->
+        <section style="padding: 40px 0 60px 0;">
+            <div class="container" style="max-width: 800px;">
+                <h2>Как проходят занятия</h2>
+                <ul class="lesson-list">
+                    <li><strong>Знакомство.</strong> Первое занятие, короткий разговор на 20–30 минут: ваш уровень, цель, что уже
+                        пробовали. По итогу определим, чем смогу помочь и подойдёт ли вам такой формат.</li>
+                    <li><strong>Занятия.</strong> Онлайн, индивидуально, по часу. Частоту и темы выбираем под вашу
+                        ситуацию, например 2–3 раза в неделю или реже.</li>
+                    <li><strong>Между занятиями.</strong> Могу ответить на вопросы в Telegram и посмотреть код. Обычно
+                        отвечаю в течение 24 часов в будни.</li>
+                </ul>
+                <p class="note">
+                    Что нужно от вас: ноутбук с Android Studio, готовность писать код между занятиями и вопросы,
+                    которые приходят в процессе.
+                </p>
+                <div class="cta-wrap">
+                    <a href="https://t.me/alex_ch_13" target="_blank" rel="noopener" class="cta-btn">Обсудить занятия в
+                        Telegram</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Обо мне -->
+        <section style="padding: 40px 0 60px 0;">
+            <div class="container" style="max-width: 800px;">
+                <h2>Обо мне</h2>
+                <p>
+                    Меня зовут Алексей. Я Android-разработчик, больше 10 лет работаю в финтехе. Работал над большими
+                    проектами в таких доменах, как медицина, авиация, криптовалюты и других. Последние годы активно
+                    работаю с ИИ-инструментами в разработке и знаю, где они помогают, а где создают скрытые проблемы.
+                </p>
+                <p>
+                    Репетиторством занимаюсь, потому что вижу, что многим начинающим не хватает человека, который
+                    объяснит и посмотрит код.
+                </p>
+            </div>
+        </section>
+
+        <!-- Стоимость -->
+        <section style="padding: 40px 0 60px 0;">
+            <div class="container" style="max-width: 800px;">
+                <h2>Стоимость</h2>
+
+                <div class="card">
+                    <div class="price-value">100 BYN <span>за 1 час занятия</span></div>
+                    <p>Оплата после каждого занятия или блоком из 4 занятий, как вам удобнее.</p>
+                </div>
+
+                <div class="card" style="border-color: #3f3f46;">
+                    <h3>Пилотные условия для первых трёх человек</h3>
+                    <div class="price-value">50 BYN <span>за час</span></div>
+                    <p>Взамен прошу честный отзыв о занятиях и обратную связь, что было полезно, а что нет.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Что я не обещаю -->
+        <section style="padding: 40px 0 60px 0;">
+            <div class="container" style="max-width: 800px;">
+                <h2>Что я не обещаю</h2>
+                <p>
+                    Я не обещаю трудоустройство. Всё зависит от вашей базы и от того, сколько времени вы вкладываете.
+                    Я обещаю объяснять понятно и говорить честно, что получается, а что нет.
+                </p>
+            </div>
+        </section>
+
+        <!-- Частые вопросы -->
+        <section style="padding: 40px 0 60px 0;">
+            <div class="container" style="max-width: 800px;">
+                <h2>Частые вопросы</h2>
+
+                <div class="faq-item">
+                    <h3>Сколько занятий понадобится?</h3>
+                    <p>Зависит от цели. Для разбора одной темы или проекта часто хватает 2–4 занятий. Для более
+                        глубокой работы обсудим на знакомстве.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>У меня нет проекта. Это проблема?</h3>
+                    <p>Нет. Можем выбрать небольшой учебный проект под ваши интересы или разбирать темы без проекта.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Что если я пропущу занятие?</h3>
+                    <p>Предупредите хотя бы за 12 часов, и мы перенесём.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Можно ли заниматься с ИИ-инструментами на занятии?</h3>
+                    <p>Да, и это один из главных форматов: пишем с ИИ, а потом вместе разбираем, что он сделал
+                        правильно, а что нет.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Вы помогаете найти работу?</h3>
+                    <p>Помогаю с резюме и подготовкой к собеседованиям. Вакансий не предлагаю и трудоустройство не
+                        обещаю.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Как оплатить?</h3>
+                    <p>Реквизиты и способ оплаты пришлю после знакомства.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Связаться -->
+        <section class="contacts-block" style="padding: 40px 0 70px 0;">
+            <div class="container" style="max-width: 800px;">
+                <h2>Связаться</h2>
+                <p>
+                    Напишите мне в Telegram: <a href="https://t.me/alex_ch_13" target="_blank" rel="noopener"
+                        style="color: var(--text-primary); text-decoration: underline;">@alex_ch_13</a>.
+                    Укажите уровень, цель и удобное время, и я отвечу в течение дня.
+                </p>
+                <div class="cta-wrap">
+                    <a href="https://t.me/alex_ch_13" target="_blank" rel="noopener" class="cta-btn">Написать в
+                        Telegram</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>По всем вопросам: <a href="mailto:alex@aerosystem.tech">alex@aerosystem.tech</a></p>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.threads.com/@le.xus470" target="_blank" rel="noopener">Threads</a>
+                <a href="https://www.reddit.com/user/Useful_Mode1799/" target="_blank" rel="noopener">Reddit</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
